@@ -3,6 +3,7 @@ import express from 'express'
 
 const router = express.Router();
 
+
 // get list of all recipes
 router.route('/recipes').get((req, res) => {
     Recipe.find({}, (err, found) => {
@@ -18,6 +19,7 @@ router.route('/recipes').get((req, res) => {
 // create a new document
 router.route('/recipes').post(async (req, res) => {
     const { body } = req
+
 
     const recipe = new Recipe({
         title: body.title,
@@ -41,8 +43,6 @@ router.route('/recipe/:id').get(async (req, res) => {
     }
 
     else if(!(typeof params.id == "string")) {
-        console.log(typeof params.id);
-        console.log(params.id);
         getRes = {error: "ID is not of type string"};
         res.status(400);
     }

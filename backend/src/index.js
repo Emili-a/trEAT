@@ -1,19 +1,5 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import cors from 'cors'
+import app from './server.js'
 import mongoose from 'mongoose'
-import router from './routes.js'
-
-
-const app = express()
-const PORT = 8000
-
-// handle json
-app.use(bodyParser.json({ extended: true }))
-
-// origins should be spesified in prod
-app.use(cors());
-app.use(router);
 
 // Connect to mongodb
 mongoose
@@ -23,5 +9,4 @@ mongoose
     )
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
-
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}...`))
+app.listen(3000);

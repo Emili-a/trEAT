@@ -18,4 +18,15 @@ app.use(cors());
 app.use(router);
 
 
+export const connectMongo = (name) =>
+    mongoose
+        .connect(
+            `mongodb+srv://henrikskog:JYN*yvn1dyk7anx*jmy@cluster0.ycj8k.mongodb.net/${name}?retryWrites=true&w=majority`,
+            { useNewUrlParser: true, useUnifiedTopology: true }
+        )
+        .then(() => console.log("MongoDB connected"))
+        .catch(err => console.log(err));
+
+
+
 export default app

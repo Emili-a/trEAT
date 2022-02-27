@@ -1,10 +1,10 @@
 import dropAllCollections from "./cleanup"
 import mongoose from 'mongoose'
+import { connectMongo } from "../../server"
 
 // Connect to Mongoose
 beforeAll(async () => {
-    const url = `mongodb://127.0.0.1/testing-db`
-    await mongoose.connect(url, { useNewUrlParser: true })
+    await connectMongo('test-database')
 })
 
 // Disconnect Mongoose

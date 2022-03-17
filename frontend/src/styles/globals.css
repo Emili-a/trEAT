@@ -90,6 +90,10 @@ body {
     margin-top: 24px;
 }
 
+.errorContainer {
+    width: 250px;
+}
+
 .flexRow{
     display:flex;
     flex-direction: row;

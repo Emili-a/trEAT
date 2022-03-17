@@ -3,8 +3,8 @@ import {
 } from '@blueprintjs/core';
 import React, { useContext, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
 import { UserContext } from '../context/UserContext';
+import requestRegister from '../requests/register';
 
 export default function Register() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,7 +18,21 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const formSubmitHandler = (e) => {
+  const handleRegisterErrors = (responsePromise, response) => {
+    if (responsePromise.status === 200) {
+      setIsSubmitting(false);
+      setUserContext((oldValues) => ({ ...oldValues, token: response.data.token }));
+      navigate('/');
+    } else if (responsePromise.status === 400) {
+      setError('Please fill all the fields correctly!');
+    } else if (responsePromise.status === 401) {
+      setError('Invalid email and password combination.');
+    } else if (responsePromise.status === 500) {
+      setError(response.message);
+    }
+  };
+
+  const formSubmitHandler = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -26,35 +40,16 @@ export default function Register() {
 
     const genericErrorMessage = 'Something went wrong! Please try again later.';
 
-    axios({
-      method: 'post',
-      url: 'http://localhost:8000/users/signup',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      withCredentials: 'include',
-      data: JSON.stringify({ fullName, username, password }),
-    })
-      .then(async (response) => {
-        console.log(response);
-        setIsSubmitting(false);
-        setUserContext((oldValues) => ({ ...oldValues, token: response.data.token }));
-        navigate('/');
-      })
-      .catch((response) => {
-        console.log(response);
-        if (response.status === 400) {
-          setError('Please fill all the fields correctly!');
-        } else if (response.status === 401) {
-          setError('Invalid email and password combination.');
-        } else if (response.status === 500) {
-          console.log(response);
+    try {
+      const responsePromise = await requestRegister(fullName, username, password);
 
-          const data = response.json();
+      setIsSubmitting(true);
+      const response = await responsePromise.json();
 
-          if (data.message) setError(data.message || genericErrorMessage);
-        }
-      });
+      handleRegisterErrors(responsePromise, response);
+    } catch (response) {
+      setError(genericErrorMessage);
+    }
   };
 
   return (
@@ -98,7 +93,9 @@ export default function Register() {
               </div>
             </Link>
           </div>
-          {error && <Callout intent="danger">{error}</Callout>}
+          <div className="errorContainer">
+            {error && <Callout intent="danger">{error}</Callout>}
+          </div>
           <Button
             className="formButton"
             intent="primary"

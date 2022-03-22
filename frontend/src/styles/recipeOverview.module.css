@@ -1,27 +1,34 @@
 .outerContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: #f7f7f4;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f7f4;
 }
 
-.recipeContainer {
-    background-color: #f7f7f4;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0.6rem 0.8rem;
+.usernameTitle {
+  margin: 0px;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* Small devices (landsscape phones) standard */
 /* Medium devices (tablets) */
-@media (min-width: 650px) {
-    .recipeContainer {        
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: flex-start;
-        max-width: 1600px;
-    }
+.recipeContainer {
+  /* 100vw gives horizontal scrollbar */
+  min-width: 98.7vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 1600px;
 }
-/* Large divices (large desktops) */
+

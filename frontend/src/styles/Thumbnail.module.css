@@ -2,7 +2,7 @@
     margin: 0.6rem 0.6rem 1rem 0.6rem;
     padding: 1rem 0.8rem 0rem 0.8rem;
     border-color: black;
-    border-radius: 2.5%;
+    border-radius: 1%;
     text-align: center;
     width: 350px;
     height: 600px;
@@ -24,7 +24,7 @@ width: 100%;
 .thumbnailImage{
     width: 100%;
     height: 15rem;
-    border-radius: 3% ;
+    border-radius: 1% ;
 
 }
 
@@ -94,8 +94,7 @@ width: 100%;
         min-width: 300px;  
     } 
 
-    .thumbnailImage{
-    }
+
 
     #heading {
         display: flex;
@@ -107,5 +106,16 @@ width: 100%;
     h1 {
         font-size: 2em;
     }
+}
 
+@media (max-width: 400px) {
+    .box{
+        width: 95%;
+        padding: 12px;
+        margin: 12px auto;
+    }
+    .thumbnailImage{
+        padding: 2px;
+    }
+    
 }

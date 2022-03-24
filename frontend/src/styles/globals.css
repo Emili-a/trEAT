@@ -193,6 +193,7 @@ body {
   .recipePageWrapper {
     width: 99%;
     margin: 0px;
+    padding: 2px;
   }
 
   .w-md-editor-toolbar {

@@ -66,6 +66,10 @@
     align-items: center;
 }
 
+.recipeMarkdown, .recipeDescription{
+    max-width: 500px;
+}
+
 @media only screen and (max-width: 900px) {
     .recipeBodyContainer{
         width: 100%;

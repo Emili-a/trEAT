@@ -46,7 +46,15 @@ export default function RecipeIngredientsInput({ ingredients, setIngredients }) 
         </ul>
         <div className={styles.addEntryContainer}>
           <button type="button" className={styles.addButton} onClick={handleAdd}>+</button>
-          <input type="text" value={name} className={styles.entryContainer} id="newIngredientSubmission" onChange={handleChange} onKeyPress={handleChange} />
+          <input
+            placeholder="Legg til ingrediens"
+            type="text"
+            value={name}
+            className={styles.input}
+            id="newIngredientSubmission"
+            onChange={handleChange}
+            onKeyPress={handleChange}
+          />
         </div>
       </div>
     </div>

@@ -28,10 +28,9 @@ export default function Thumbnail({
     <div className={cn(styles.box, 'elementBackground')}>
       <div className={styles.separatorBox}>
         <Link className={styles.link} to={`/recipe/${id}`}>
-
           <img className={styles.thumbnailImage} src={image} alt="" />
           <div id="heading">
-            <h1>{title}</h1>
+            <h1 className={styles.thumbnailTitle}>{title}</h1>
           </div>
           <div className={styles.tinyFacts}>
             <div className={styles.factsContainer}>
@@ -39,15 +38,16 @@ export default function Thumbnail({
               <div id="duration">{duration}</div>
             </div>
           </div>
-          <p id="rating">{description}</p>
+          <p className={styles.description}>{description}</p>
         </Link>
-        <div className={`${isMyProfile ? styles.linkBox : styles.noLinkBox}`}>
-          <Link className={styles.editLink} to={`/recipe/${id}/edit`}>
-            <div className={styles.editIcon}>
-              <FaRegEdit />
-            </div>
-          </Link>
-        </div>
+
+      </div>
+      <div className={`${isMyProfile ? styles.linkBox : styles.noLinkBox}`}>
+        <Link className={styles.editLink} to={`/recipe/${id}/edit`}>
+          <div className={styles.editIcon}>
+            <FaRegEdit />
+          </div>
+        </Link>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ h1 {
   font-size: 2.5em;
   font-weight: 400;
   margin: 0 0 0.4em 0;
-  color: #008f67;
+  color: #00be88;
   overflow: hidden;
 }
 
@@ -25,11 +25,11 @@ img {
 }
 
 .background {
-  background-color: #f7f7f4;
+  background-color: #f1f1f1;
 }
 
 .elementBackground {
-  background-color: #e3e3da;
+  background-color: rgb(255, 255, 255);
 }
 
 .white {

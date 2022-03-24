@@ -1,6 +1,5 @@
 .box {
     margin: 0.6rem 0.6rem 1rem 0.6rem;
-    padding: 1rem 0.8rem 0rem 0.8rem;
     border-color: black;
     border-radius: 1%;
     text-align: center;
@@ -11,6 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
 }
 
 .separatorBox {
@@ -25,7 +25,12 @@ width: 100%;
     width: 100%;
     height: 15rem;
     border-radius: 1% ;
+    transition: ease-out 0.15s;
+}
 
+.thumbnailImage:hover{
+    transform: scale(1.04);
+    transition: ease-out 0.15s;
 }
 
 .factsContainer{
@@ -35,7 +40,7 @@ width: 100%;
 }
 
 .tinyFacts {
-    color: #008f67;;
+    color: #018d81;
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0.3rem 0rem;
@@ -68,6 +73,10 @@ width: 100%;
     display: flex;
     justify-content: end;
     align-items: flex-end;
+    width: 100%;
+    margin-bottom: 8px;
+    margin-right: 12px;
+    padding-right: 8px;
 }
 
 .noLinkBox {
@@ -79,8 +88,26 @@ width: 100%;
 }
 
 .editIcon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #008f67;
+}
+
+.editIcon:hover{
+    color: #01b985;
+}
+
+.thumbnailTitle{
+    font-size: 2rem;
+}
+
+.thumbnailTitle:hover{
+    color: #00db9d;
+}
+
+.description{
+    max-height: 200px;
+    margin-bottom: 0px;
+    overflow: hidden;
 }
 
 /* Small devices (landsscape phones) standard */

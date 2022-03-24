@@ -159,7 +159,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 0.6rem 0.8rem;
-  min-width: 80%;
+  min-width: 100%;
 }
 
 /* Small devices (landsscape phones) standard */
@@ -170,7 +170,6 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
-    min-width: 80%;
   }
 }
 /* Large devices (large desktops) */

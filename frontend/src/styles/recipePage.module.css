@@ -1,5 +1,5 @@
 .recipeImage{
-    width: 91.25%;
+    width: 90%;
     height: 40%;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -26,7 +26,7 @@
         display: none;
     }
     .recipeImage{
-        width: 100%;
+        width: 99%;
         margin-bottom: -24px;
     }
 }

@@ -40,7 +40,7 @@ width: 100%;
 }
 
 .tinyFacts {
-    color: #00b27f;
+    color: #000;
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0.3rem 0rem;
@@ -119,4 +119,10 @@ width: 100%;
         padding: 2px;
     }
     
+}
+
+@media (prefers-color-scheme: dark) {
+    .tinyFacts{
+        color:#fff;
+    }
 }

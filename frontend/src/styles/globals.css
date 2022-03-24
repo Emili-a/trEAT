@@ -162,6 +162,10 @@ body {
   min-width: 100%;
 }
 
+.w-md-editor-text-input{
+  height: 95%;
+}
+
 /* Small devices (landsscape phones) standard */
 /* Medium devices (tablets) */
 @media (min-width: 650px) {
@@ -177,6 +181,10 @@ body {
 /* Large devices (large desktops) */
 
 @media only screen and (max-width: 900px) {
+
+  .w-md-editor-text-input{
+
+  }
   .centeredPageWrapper {
     width: 100%;
     padding: 0px;

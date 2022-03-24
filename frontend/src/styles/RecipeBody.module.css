@@ -82,7 +82,7 @@
 
 .recipeMarkdown, .recipeDescription{
     max-width: 700px;
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 350;
 }
 
@@ -95,7 +95,6 @@
 
     .recipeMarkdown, .recipeDescription{
     max-width: 500px;
-    font-size: 1.25rem;
     font-weight: 350;
     padding: 24px;
 }

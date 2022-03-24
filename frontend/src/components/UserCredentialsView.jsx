@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect } from 'react';
 import axios from 'axios';
 import { UserContext } from '../context/UserContext';
-import styles from '../styles/recipeOverview.module.css';
+import styles from '../styles/recipeView.module.css';
 
 export default function UserCredentialsView({ hidden }) {
   const [userContext, setUserContext] = useContext(UserContext);

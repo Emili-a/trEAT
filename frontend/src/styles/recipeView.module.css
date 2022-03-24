@@ -19,16 +19,23 @@
   flex-direction: column;
 }
 
+.recipeContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.6rem 0.8rem;
+    max-width: 1600px;
+}
+
 /* Small devices (landsscape phones) standard */
 /* Medium devices (tablets) */
-.recipeContainer {
-  /* 100vw gives horizontal scrollbar */
-  min-width: 98.7vw;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  max-width: 1600px;
+@media (min-width: 650px) {
+    .recipeContainer {        
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: 1600px;
+    }
 }
 

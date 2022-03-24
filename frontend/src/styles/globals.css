@@ -158,7 +158,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 0.6rem 0.8rem;
+  padding: 0px;
   min-width: 100%;
 }
 
@@ -170,11 +170,13 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
+    padding: 0.6rem 0.8rem;
+    max-width: 1600px;
   }
 }
 /* Large devices (large desktops) */
 
-/* @media only screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .centeredPageWrapper {
     width: 100%;
     padding: 0px;

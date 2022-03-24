@@ -4,9 +4,13 @@
     border-color: black;
     border-radius: 2.5%;
     text-align: center;
-    max-width: 600px;
+    width: 350px;
+    height: 600px;
     display: flex; 
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .separatorBox {
@@ -70,12 +74,12 @@ width: 100%;
 
 /* Small devices (landsscape phones) standard */
 /* Medium devices (tablets) */
-@media (min-width: 650px) {
+@media (max-width: 650px) {
     .box {
         min-height: 37rem;
         align-items: center;
         justify-content: center;
-        width: 300px;
+        width: 400px;
         flex-basis: 300px;
         flex-grow: 1;
         max-width: 500px;

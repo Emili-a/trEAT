@@ -28,6 +28,12 @@ width: 100%;
 
 }
 
+.factsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .tinyFacts {
     color: #008f67;;
     font-size: 1.5rem;
@@ -35,8 +41,7 @@ width: 100%;
     margin: 0.3rem 0rem;
     padding: 0 0.4em;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+
 }
 
 .tinyFacts div{
@@ -45,10 +50,16 @@ width: 100%;
 
 .tinyFacts div div{
     margin: 0.2;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
 }
 
  #clock, #star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position:relative;
     top: 3px;
 }

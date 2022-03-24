@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
-import { FaRegClock, FaStar, FaRegEdit } from 'react-icons/fa';
+import { FaRegClock, FaRegEdit } from 'react-icons/fa';
 import styles from '../styles/Thumbnail.module.css';
 import { UserContext } from '../context/UserContext';
 
@@ -10,7 +10,6 @@ export default function Thumbnail({
   title, // no more than two lines
   image,
   duration,
-  rating,
   description,
   id,
   userID,
@@ -29,18 +28,15 @@ export default function Thumbnail({
     <div className={cn(styles.box, 'elementBackground')}>
       <div className={styles.separatorBox}>
         <Link className={styles.link} to={`/recipe/${id}`}>
+
+          <img className={styles.thumbnailImage} src={image} alt="" />
           <div id="heading">
             <h1>{title}</h1>
           </div>
-          <img className={styles.thumbnailImage} src={image} alt="" />
           <div className={styles.tinyFacts}>
-            <div>
+            <div className={styles.factsContainer}>
               <div id="clock"><FaRegClock /></div>
               <div id="duration">{duration}</div>
-            </div>
-            <div>
-              <div id="star"><FaStar /></div>
-              <div id="rating">{rating}</div>
             </div>
           </div>
           <p id="rating">{description}</p>
